@@ -14,7 +14,10 @@
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
                     <th>Password</th>
+                    <th>Others</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -37,10 +40,22 @@
                         <input type="text" class="form-control" id="name" required>
                     </div>
                     <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
                         <label for="password">Password:</label>
                         <input type="text" class="form-control" id="password" required>
+                        <button type="button" class="btn btn-primary" onclick="generateRandomPassword('password')">Generate Random Password</button>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="generateRandomPassword('password')">Generate Random Password</button>
+                    <div class="form-group">
+                        <label for="others">Others:</label>
+                        <input type="text" class="form-control" id="others">
+                    </div>        
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -64,11 +79,23 @@
                         <input type="text" class="form-control" id="editName" required>
                     </div>
                     <div class="form-group">
+                        <label for="editUsername">Username:</label>
+                        <input type="text" class="form-control" id="editUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email:</label>
+                        <input type="email" class="form-control" id="editEmail" required>
+                    </div>
+                    <div class="form-group">
                         <label for="editPassword">Password:</label>
                         <input type="text" class="form-control" id="editPassword" required>
+                        <button type="button" class="btn btn-primary" onclick="generateRandomPassword('editPassword')">Generate Random Password</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="editOthers">Others:</label>
+                        <input type="text" class="form-control" id="editOthers">
                     </div>
                     <input type="hidden" id="editItemId">
-                    <button type="button" class="btn btn-primary" onclick="generateRandomPassword('editPassword')">Generate Random Password</button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

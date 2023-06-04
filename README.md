@@ -3,7 +3,6 @@
 This is a program with the main purpose of auto generating random characters that can be useful for generating password.
 
 To use this as a default:
-
 INSTRUCTIONS:
 1. Create a database name 'personal_base'
 2. Create a table name 'randomgen' or you can copy and paste this to SQL.

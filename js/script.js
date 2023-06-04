@@ -1,6 +1,6 @@
 // Generate random password
 function generateRandomPassword(inputId) {
-    var passwordLength = 21;
+    var passwordLength = 30;
     var password = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*().';
 

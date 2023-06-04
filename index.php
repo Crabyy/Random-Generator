@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>CRUD Example</h2>
+        <h2 class="table mt-4">Personal Random Generator</h2>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createModal">Create</button>
         <table class="table mt-4">
             <thead>

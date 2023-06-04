@@ -31,6 +31,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action'] === 'fetch') {
     if ($action === 'create') {
         $name = $_POST['name'];
         $password = $_POST['password'];
+
+        // Check if the password already exists
+        $stmt = $conn->prepare('SELECT COUNT(*) FROM randomgen WHERE password = :password');
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            echo '<script>alert("Error: Password already exists.");</script>';
+            return;
+        }
+
+        // Insert the new item
         $stmt = $conn->prepare('INSERT INTO randomgen (name, password) VALUES (:name, :password)');
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':password', $password);
@@ -41,6 +54,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action'] === 'fetch') {
         $id = $_POST['id'];
         $name = $_POST['name'];
         $password = $_POST['password'];
+
+        // Check if the password already exists (excluding the current item)
+        $stmt = $conn->prepare('SELECT COUNT(*) FROM randomgen WHERE password = :password AND id != :id');
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            echo '<script>alert("Error: Password already exists.");</script>';
+            return;
+        }
+
+        // Update the item
         $stmt = $conn->prepare('UPDATE randomgen SET name = :name, password = :password WHERE id = :id');
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':name', $name);

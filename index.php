@@ -13,7 +13,7 @@
         <table class="table mt-4">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Website</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Password</th>

@@ -12,7 +12,7 @@ function copyPassword(password) {
 
 // Generate random password
 function generateRandomPassword(inputId) {
-    var passwordLength = 71;
+    var passwordLength = 12;
     var password = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*().';
 

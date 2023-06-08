@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_GET['action'] === 'fetch') {
         $output .= '<td>';
         $output .= '<button type="button" class="btn btn-primary btn-sm m-1" onclick="editItem(' . $row['id'] . ', \'' . $row['name'] . '\', \'' . $row['username'] . '\', \'' . $row['email'] . '\', \'' . $row['password'] . '\', \'' . $row['others'] . '\')">Edit</button> ';
         $output .= '<button type="button" class="btn btn-danger btn-sm m-1" onclick="deleteItem(' . $row['id'] . ')">Delete</button>';
+        $output .= '<button type="button" class="btn btn-success btn-sm m-1" onclick="copyPassword(\'' . $row['password'] . '\')">Copy</button>';
         $output .= '</td>';
         $output .= '</tr>';
     }

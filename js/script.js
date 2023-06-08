@@ -1,3 +1,15 @@
+// Copy password to clipboard
+function copyPassword(password) {
+    var tempInput = document.createElement("input");
+    tempInput.type = "text";
+    tempInput.value = password;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    alert("Password copied to clipboard!");
+}
+
 // Generate random password
 function generateRandomPassword(inputId) {
     var passwordLength = 71;
